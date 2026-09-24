@@ -51,10 +51,14 @@ def fibonacci(n: int) -> int:
         - otherwise: fibonacci(n-1) + fibonacci(n-2)
 
     """
-    if n < 2:
-        return n
+    prev = 0
+    cur = 1
+    
+    for k in range(n):
+        cur, prev = cur + prev, cur
 
-    return fibonacci(n-1) + fibonacci(n-2)
+
+    return prev
 
 
 @app.cell(hide_code=True)
