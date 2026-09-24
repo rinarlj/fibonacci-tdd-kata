@@ -75,6 +75,12 @@ def _():
     return
 
 
+@app.cell
+def _():
+    fibonacci(10**2)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
