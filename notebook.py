@@ -21,7 +21,21 @@ def _(mo):
 
 @app.function
 def fibonacci(n: int) -> int:
-    ...
+    """
+        Returns the n-th Fibonacci number 
+        Contract:
+        - if n = 0: 0
+        - if n = 1: 1
+        - otherwise: fibonacci(n-1) + fibonacci(n-2)
+
+    """
+    
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 
 
 @app.cell
