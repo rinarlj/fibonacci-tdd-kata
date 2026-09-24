@@ -19,6 +19,28 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    This notebook implements the Fibonacci sequence using TDD.
+
+    The Fibonacci sequence is defined by:
+
+    - F(0) = 0
+    - F(1) = 1
+    - F(n) = F(n-1) + F(n-2)
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ### Fibonacci function implementation
+    """)
+    return
+
+
 @app.function
 def fibonacci(n: int) -> int:
     """
@@ -35,6 +57,14 @@ def fibonacci(n: int) -> int:
     return fibonacci(n-1) + fibonacci(n-2)
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ### Unit tests
+    """)
+    return
+
+
 @app.cell
 def _():
     assert fibonacci(0) == 0
@@ -42,6 +72,32 @@ def _():
     assert fibonacci(2) == 1
     assert fibonacci(5) == 5
     assert fibonacci(10) == 55
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ### Interactive marimo widget
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    n_input = mo.ui.number(start=1, stop=1000, step=1, value=5, label="n")
+    n_input
+    return (n_input,)
+
+
+@app.cell
+def _(mo, n_input):
+    try:
+        result = fibonacci(n_input.value)
+        output = mo.md(f"`fibonacci({n_input.value})` → **{result}**")
+    except ValueError as e:
+        output = mo.md(f"⚠️ Error: {e}")
+    output
     return
 
 
