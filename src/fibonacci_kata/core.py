@@ -17,5 +17,4 @@ def fibonacci(n: int) -> int:
     for k in range(n):
         cur, prev = cur + prev, cur
 
-
     return prev
