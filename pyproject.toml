@@ -44,4 +44,4 @@ show_missing = true
 fail_under = 90
 
 [project.scripts]
-fizzbuzz-kata = "fibonacci_kata.cli:main"
+fibonacci-kata = "fibonacci_kata.cli:main"
