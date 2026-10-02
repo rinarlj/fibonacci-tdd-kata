@@ -21,6 +21,7 @@ dev = [
     "ruff>=0.6",
     "marimo>=0.10",
     "mypy>=2.4.0",
+    "matplotlib>=3.11.2",
 ]
 
 [tool.pytest.ini_options]
@@ -43,4 +44,4 @@ show_missing = true
 fail_under = 90
 
 [project.scripts]
-fizzbuzz-kata = "fizzbuzz_kata.cli:main"
+fizzbuzz-kata = "fibonacci_kata.cli:main"
