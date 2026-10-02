@@ -8,7 +8,6 @@ app = marimo.App(width="medium")
 def _():
     import marimo as mo
     import matplotlib.pyplot as plt
-    from collections import Counter
 
     from fibonacci_kata import fibonacci
 
@@ -54,7 +53,7 @@ def _(end, fibonacci, start):
 
     results = [fibonacci(n) for n in range(lo, hi + 1)]
 
-    results
+    # results
     return (results,)
 
 
@@ -71,13 +70,8 @@ def _(plt, results):
     ax.set_xlabel("n")
     ax.set_ylabel("Fibonacci value")
     ax.set_title("Fibonacci values over the selected range")
+    plt.show()
 
-    fig
-    return
-
-
-@app.cell
-def _():
     return
 
 
